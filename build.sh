@@ -9,7 +9,7 @@ GOOS=${GOOS:-$(uname | tr '[:upper:]' '[:lower:]')}
 D=/app/src/github.com/warchant/go-grpc-health
 
 docker run --rm -i \
-    -e GOOS:${GOOS} \
+    -e GOOS=${GOOS} \
     -v ${PWD}:${D}:rw \
     -w ${D} \
     golang bash << COMMANDS

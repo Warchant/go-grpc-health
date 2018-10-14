@@ -12,6 +12,26 @@ $ ./build.sh
 
 This script should produce static binary `go-grpc-health` for your host OS.
 
+### Crosscompilation
+
+You also can produce binary from any os for any other OS, thanks to GO:
+```bash
+$ uname
+Darwin
+
+$ GOOS=linux ./build.sh
+$ file go-grpc-health
+go-grpc-health: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, not stripped
+
+$ GOOS=windows ./build.sh
+$ file go-grpc-health.exe                                                                      
+go-grpc-health.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows
+
+$ GOOS=darwin ./build.sh
+$ file go-grpc-health                                                                          
+go-grpc-health: Mach-O 64-bit executable x86_64
+```
+
 # Usage
 
 
