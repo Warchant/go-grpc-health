@@ -10,6 +10,8 @@ If you're not familiar with go or don't have golang installed in a system, then 
 $ ./build.sh
 ```
 
+This script should produce static binary `go-grpc-health` for your host OS.
+
 # Usage
 
 
