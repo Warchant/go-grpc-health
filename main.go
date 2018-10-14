@@ -68,11 +68,11 @@ func main() {
 }
 
 func down(address string) {
-	logrus.Warnf("%s is down", address)
+	logrus.Warnf("GRPC server at %s is down", address)
 	os.Exit(1)
 }
 
 func up(address string) {
-	logrus.Warnf("%s is up", address)
+	logrus.Warnf("GRPC server at %s is up", address)
 	os.Exit(0)
 }
