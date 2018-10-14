@@ -33,15 +33,13 @@ func main() {
 	level, err := logrus.ParseLevel(verbosity)
 	if err != nil {
 		logrus.Errorf("%v\n", err)
-		os.Exit(2)
+		os.Exit(1)
 	}
 	logrus.SetLevel(level)
-
 	logrus.Debugf("Starting go-grpc-healthcheck...")
 
 	address := fmt.Sprintf("%s:%d", host, port)
 	conn, err := grpc.Dial(address, grpc.WithInsecure())
-
 	logrus.Debugf("Checking availability of %s...", conn.Target())
 	if err != nil {
 		down(conn.Target())
