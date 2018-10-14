@@ -6,7 +6,7 @@ cd $(dirname $0)
 # darwin/linux
 GOOS=${GOOS:-$(uname | tr '[:upper:]' '[:lower:]')}
 
-D=/app/src/github.com/warchant/go-grpc-healthcheck
+D=/app/src/github.com/warchant/go-grpc-health
 
 docker run --rm -i \
     -e GOOS:${GOOS} \
